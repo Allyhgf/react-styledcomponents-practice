@@ -1,6 +1,7 @@
 import React from "react";
-import { BrowserRouter as Router} from 'react-router-dom'
-import { Navbar } from './components'
+import { BrowserRouter as Router, Routes, Route} from 'react-router-dom'
+import { Navbar, Footer } from './components'
+import Home from './pages/HomePage/Home'
 import GlobalStyle from './globalStyles'
 
 function App() {
@@ -8,6 +9,10 @@ function App() {
     <Router>
       <GlobalStyle/>
       <Navbar />
+      <Routes>
+        <Route exact path="/" element={<Home/>} />
+      </Routes>
+      <Footer />
     </Router>
   );
 }
